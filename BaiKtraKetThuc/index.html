@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3-Slot Gambling Machine</title>
+</head>
+<style>
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.machine {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.slot {
+    width: 120px;
+    height: 120px;
+    border: 1px solid #0a0a0a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+.slot img {
+    width: 60px;
+    height: 60px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #000;
+    background-color: aquamarine;
+    border: none;
+    border-radius: 10px;
+    margin-left: 600px;
+}
+
+.betting-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.betting-images {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+
+}
+
+.bet-item {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+.bet-item:hover{
+    box-shadow: 12px 12px 50px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s;
+    transform: translate(0px, -10px); 
+}
+
+.bet-item img {
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    border: 1px solid #0a0a0a;
+
+}
+
+.bet-item img:hover {
+    border-color: #c40f0f;
+}
+
+.bet-item span {
+    position: absolute;
+    top: 0;
+    left: 5px;
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.betting-container button {
+    margin-top: 10px;
+    padding: 5px 15px;
+}
+</style>
+<body>
+    <div class="machine">
+        <div class="slot" id="slot1">
+            <img src="./bau.png" alt="Slot 1" id="img1">
+        </div>
+        <div class="slot" id="slot2">
+            <img src="./ca.png" alt="Slot 2" id="img2">
+        </div>
+        <div class="slot" id="slot3">
+            <img src="./cua.png" alt="Slot 3" id="img3">
+        </div>
+    </div>
+    <button onclick="startSpin()">Quay</button>
+
+    <div class="betting-container">
+        <h3>Tổng Cược:<span id="totalBet">0</span></h3>
+        <div class="betting-images">
+            <div class="bet-item">
+                <img src="./bau.png" alt="Bet 1" onclick="placeBet(0)">
+                <span id="betAmount0">0</span>
+            </div>
+            <div class="bet-item">
+                <img src="./ca.png" alt="Bet 2" onclick="placeBet(1)">
+                <span id="betAmount1">0</span>
+            </div>
+            <div class="bet-item">
+                <img src="./cua.png" alt="Bet 3" onclick="placeBet(2)">
+                <span id="betAmount2">0</span>
+            </div>
+            <div class="bet-item">
+                <img src="./ga.png" alt="Bet 4" onclick="placeBet(3)">
+                <span id="betAmount3">0</span>
+            </div>
+            <div class="bet-item">
+                <img src="./huou.png" alt="Bet 5" onclick="placeBet(4)">
+                <span id="betAmount4">0</span>
+            </div>
+            <div class="bet-item">
+                <img src="./tom.png" alt="Bet 6" onclick="placeBet(5)">
+                <span id="betAmount5">0</span>
+            </div>
+        </div>
+        <button onclick="resetBet()">Đặt Lại</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
